@@ -6,18 +6,15 @@
 
 import AppKit
 import ApplicationServices
-import SwiftUI
 
 private enum DefaultsKey {
-    static let wasEnabled = "SBFWasEnabled"
+    static let shouldBeEnabled = "SBFWasEnabled"
     static let mouseDown = "SBFMouseDown"
-    static let donated = "SBFDonated"
     static let swapButtons = "SBFSwapButtons"
 }
 
 private enum MenuMode {
     case accessibility
-    case donation
     case normal
 }
 
@@ -30,10 +27,7 @@ private enum MenuItemIndex: Int {
     case startupHide
     case startupHideInfo
     case startupSeparator
-    case aboutText
-    case aboutSeparator
-    case donate
-    case website
+    case repository
     case accessibility
     case linkSeparator
     case quit
@@ -69,21 +63,21 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     private var tap: CFMachPort?
     private var menuMode: MenuMode = .normal {
         didSet {
-            refreshAboutView()
             refreshSettings()
         }
     }
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         UserDefaults.standard.register(defaults: [
-            DefaultsKey.wasEnabled: true,
+            DefaultsKey.shouldBeEnabled: true,
             DefaultsKey.mouseDown: true,
-            DefaultsKey.donated: false,
             DefaultsKey.swapButtons: false
         ])
 
+        UserDefaults.standard.set(true, forKey: DefaultsKey.shouldBeEnabled)
+
         setupStatusItem()
-        startTap(UserDefaults.standard.bool(forKey: DefaultsKey.wasEnabled))
+        startTap(true)
         updateMenuMode()
         refreshSettings()
     }
@@ -94,7 +88,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     }
 
     func applicationWillTerminate(_ notification: Notification) {
-        startTap(false)
+        if let activeTap = tap {
+            CGEvent.tapEnable(tap: activeTap, enable: false)
+            tap = nil
+        }
     }
 
     func menuWillOpen(_ menu: NSMenu) {
@@ -120,14 +117,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         menu.addItem(hideInfoItem)
         menu.addItem(.separator())
 
-        let aboutItem = NSMenuItem(title: "Text", action: nil, keyEquivalent: "")
-        aboutItem.view = NSHostingView(rootView: AboutMenuView(mode: menuMode))
-        menu.addItem(aboutItem)
-        menu.addItem(.separator())
-
-        let appName = Bundle.main.object(forInfoDictionaryKey: kCFBundleNameKey as String) as? String ?? "SensibleSideButtons"
-        menu.addItem(NSMenuItem(title: "\(appName) Website", action: #selector(donate(_:)), keyEquivalent: ""))
-        menu.addItem(NSMenuItem(title: "\(appName) Website", action: #selector(website(_:)), keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: "GitHub Repository", action: #selector(repository(_:)), keyEquivalent: ""))
         menu.addItem(NSMenuItem(title: "Open Accessibility Whitelist", action: #selector(accessibility(_:)), keyEquivalent: ""))
         menu.addItem(.separator())
 
@@ -135,7 +125,15 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         quit.keyEquivalentModifierMask = .command
         menu.addItem(quit)
 
+        if let button = statusItem.button {
+            button.image = menuBarImage(enabled: false)
+            button.imagePosition = .imageOnly
+            button.toolTip = "Sensible Side Buttons"
+            button.setAccessibilityLabel("Sensible Side Buttons")
+        }
+
         statusItem.menu = menu
+        statusItem.isVisible = true
         self.statusItem = statusItem
     }
 
@@ -144,7 +142,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         let accessibilityEnabled = AXIsProcessTrustedWithOptions(options)
 
         if accessibilityEnabled {
-            menuMode = UserDefaults.standard.bool(forKey: DefaultsKey.donated) ? .normal : .donation
+            let wasWaitingForAccessibility = menuMode == .accessibility
+            menuMode = .normal
+            if wasWaitingForAccessibility && tap == nil && UserDefaults.standard.bool(forKey: DefaultsKey.shouldBeEnabled) {
+                startTap(true)
+            }
         } else {
             menuMode = .accessibility
         }
@@ -161,19 +163,24 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         item(.enabled, in: menu)?.isEnabled = settingsEnabled
         item(.triggerOnMouseDown, in: menu)?.isEnabled = settingsEnabled
         item(.swapButtons, in: menu)?.isEnabled = settingsEnabled
-        item(.donate, in: menu)?.isHidden = menuMode != .donation
-        item(.website, in: menu)?.isHidden = menuMode == .donation
+        item(.repository, in: menu)?.isHidden = false
         item(.accessibility, in: menu)?.isHidden = menuMode != .accessibility
 
         item(.startupHide, in: menu)?.isHidden = false
         item(.startupHideInfo, in: menu)?.isHidden = false
 
-        statusItem?.button?.image = NSImage(named: isTapEnabled ? "MenuIcon" : "MenuIconDisabled")
+        statusItem?.button?.image = menuBarImage(enabled: isTapEnabled)
     }
 
-    private func refreshAboutView() {
-        guard let aboutItem = item(.aboutText, in: statusItem?.menu) else { return }
-        aboutItem.view = NSHostingView(rootView: AboutMenuView(mode: menuMode))
+    private func menuBarImage(enabled: Bool) -> NSImage {
+        let assetName = enabled ? "MenuIcon" : "MenuIconDisabled"
+        let image = (NSImage(named: assetName)?.copy() as? NSImage)
+            ?? NSImage(systemSymbolName: "arrow.left.arrow.right.circle", accessibilityDescription: "Sensible Side Buttons")
+            ?? NSImage(size: NSSize(width: 18, height: 18))
+
+        image.isTemplate = true
+        image.size = NSSize(width: 18, height: 18)
+        return image
     }
 
     private func startTap(_ start: Bool) {
@@ -189,7 +196,6 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
                 callback: mouseEventCallback,
                 userInfo: nil
             ) else {
-                persistTapState()
                 return
             }
 
@@ -211,7 +217,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     }
 
     private func persistTapState() {
-        UserDefaults.standard.set(isTapEnabled, forKey: DefaultsKey.wasEnabled)
+        UserDefaults.standard.set(isTapEnabled, forKey: DefaultsKey.shouldBeEnabled)
     }
 
     private func item(_ index: MenuItemIndex, in menu: NSMenu?) -> NSMenuItem? {
@@ -220,7 +226,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     }
 
     @objc private func enabledToggle(_ sender: Any?) {
-        startTap(tap == nil)
+        let shouldEnable = tap == nil
+        UserDefaults.standard.set(shouldEnable, forKey: DefaultsKey.shouldBeEnabled)
+        startTap(shouldEnable)
         refreshSettings()
     }
 
@@ -236,15 +244,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         refreshSettings()
     }
 
-    @objc private func donate(_ sender: Any?) {
-        openURL("http://sensible-side-buttons.archagon.net#donations")
-        UserDefaults.standard.set(true, forKey: DefaultsKey.donated)
-        updateMenuMode()
-        refreshSettings()
-    }
-
-    @objc private func website(_ sender: Any?) {
-        openURL("http://sensible-side-buttons.archagon.net")
+    @objc private func repository(_ sender: Any?) {
+        openURL("https://github.com/sohampatwardhan/sensible-side-buttons")
     }
 
     @objc private func accessibility(_ sender: Any?) {
@@ -302,43 +303,5 @@ private enum SwipeSynthesizer {
         let event2 = unmanagedEvent2.takeRetainedValue()
         event1.post(tap: .cghidEventTap)
         event2.post(tap: .cghidEventTap)
-    }
-}
-
-private struct AboutMenuView: View {
-    let mode: MenuMode
-
-    private var appDescription: String {
-        let name = Bundle.main.object(forInfoDictionaryKey: kCFBundleNameKey as String) as? String ?? "SensibleSideButtons"
-        let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? ""
-        return "\(name) \(version)"
-    }
-
-    private var message: String {
-        switch mode {
-        case .accessibility:
-            return "Uh-oh! It looks like \(appDescription) is not whitelisted in the Accessibility panel of your Security & Privacy System Preferences. This app needs to be on the Accessibility whitelist in order to process global mouse events. Please open the Accessibility panel below and add the app to the whitelist."
-        case .donation:
-            return "Thanks for using \(appDescription)!\nIf you find this utility useful, please consider making a purchase through the Amazon affiliate link on the website below. It won't cost you an extra cent!"
-        case .normal:
-            return "Thanks for using \(appDescription)!"
-        }
-    }
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text(message)
-                .foregroundStyle(mode == .accessibility ? .red : .secondary)
-                .font(.system(size: 13))
-                .textSelection(.disabled)
-                .fixedSize(horizontal: false, vertical: true)
-
-            Text("Copyright (C) 2018 Alexei Baboulevitch.")
-                .foregroundStyle(.secondary)
-                .font(.system(size: 13))
-        }
-        .frame(width: 286, alignment: .leading)
-        .padding(.leading, 17)
-        .padding(.vertical, 4)
     }
 }

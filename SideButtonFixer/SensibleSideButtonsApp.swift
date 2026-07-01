@@ -4,15 +4,18 @@
 //  SensibleSideButtons
 //
 
-import SwiftUI
+import AppKit
 
 @main
-struct SensibleSideButtonsApp: App {
-    @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
+enum SensibleSideButtonsApp {
+    private static var appDelegate: AppDelegate?
 
-    var body: some Scene {
-        Settings {
-            EmptyView()
-        }
+    @MainActor
+    static func main() {
+        let application = NSApplication.shared
+        let delegate = AppDelegate()
+        appDelegate = delegate
+        application.delegate = delegate
+        application.run()
     }
 }

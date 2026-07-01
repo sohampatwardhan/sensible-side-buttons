@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0F50F5C02FF5BC52009D6EA4 /* SensibleSideButtonsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F50F5BF2FF5BC52009D6EA4 /* SensibleSideButtonsApp.swift */; };
 		0F50F5C22FF5BC8E009D6EA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F50F5C12FF5BC8E009D6EA4 /* AppDelegate.swift */; };
+		0F50F5EA2FF5CF76009D6EA4 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F50F5E92FF5CF76009D6EA4 /* WidgetKit.framework */; };
+		0F50F5EC2FF5CF76009D6EA4 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F50F5EB2FF5CF76009D6EA4 /* SwiftUI.framework */; };
 		4E9995151EE7172700A1CFA6 /* TouchEvents.c in Sources */ = {isa = PBXBuildFile; fileRef = 4ECC16A21EE54D870062AC72 /* TouchEvents.c */; };
 		4EC7C3BE1EE711B400C9F725 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EC7C3BD1EE711B400C9F725 /* Assets.xcassets */; };
 		4ECC169A1EE54D3D0062AC72 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECC16991EE54D3D0062AC72 /* main.m */; };
@@ -19,6 +21,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		0F50F6002FF5CF77009D6EA4 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4ECC16941EE54D3D0062AC72 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -43,7 +55,10 @@
 		0F50F5BE2FF5BC4D009D6EA4 /* SensibleSideButtons-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SensibleSideButtons-Bridging-Header.h"; sourceTree = "<group>"; };
 		0F50F5BF2FF5BC52009D6EA4 /* SensibleSideButtonsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensibleSideButtonsApp.swift; sourceTree = "<group>"; };
 		0F50F5C12FF5BC8E009D6EA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4EC7C3B51EE711B400C9F725 /* SensibleSideButtons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SensibleSideButtons.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F50F5E72FF5CF76009D6EA4 /* SensibleSideButtons-CCWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; name = "SensibleSideButtons-CCWidgetExtension.appex"; path = "/Users/soham/GitRepos/sensible-side-buttons/build/Debug/SensibleSideButtons-CCWidgetExtension.appex"; sourceTree = "<absolute>"; };
+		0F50F5E92FF5CF76009D6EA4 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		0F50F5EB2FF5CF76009D6EA4 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		4EC7C3B51EE711B400C9F725 /* Sensible Side Buttons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sensible Side Buttons.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EC7C3BD1EE711B400C9F725 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4EC7C3C21EE711B400C9F725 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EC7C3C51EE711B400C9F725 /* SideButtonFixer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SideButtonFixer.entitlements; sourceTree = "<group>"; };
@@ -57,6 +72,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0F50F5E42FF5CF76009D6EA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F50F5EC2FF5CF76009D6EA4 /* SwiftUI.framework in Frameworks */,
+				0F50F5EA2FF5CF76009D6EA4 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4EC7C3B21EE711B400C9F725 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -81,6 +105,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F50F5E82FF5CF76009D6EA4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0F50F5E92FF5CF76009D6EA4 /* WidgetKit.framework */,
+				0F50F5EB2FF5CF76009D6EA4 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4EC7C3B61EE711B400C9F725 /* SideButtonFixer */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +134,7 @@
 				4ECC16981EE54D3D0062AC72 /* SwipeSimulator */,
 				4EC7C3B61EE711B400C9F725 /* SideButtonFixer */,
 				4ECC16A01EE54D790062AC72 /* External */,
+				0F50F5E82FF5CF76009D6EA4 /* Frameworks */,
 				4ECC16971EE54D3D0062AC72 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -110,7 +144,7 @@
 			children = (
 				4ECC16961EE54D3D0062AC72 /* swipesiml */,
 				4EF68AE91EE55A9500F6B0E8 /* swipesimr */,
-				4EC7C3B51EE711B400C9F725 /* SensibleSideButtons.app */,
+				4EC7C3B51EE711B400C9F725 /* Sensible Side Buttons.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -137,21 +171,41 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4EC7C3B41EE711B400C9F725 /* SensibleSideButtons */ = {
+		0F50F5E62FF5CF76009D6EA4 /* SensibleSideButtons-CCWidgetExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4EC7C3C81EE711B400C9F725 /* Build configuration list for PBXNativeTarget "SensibleSideButtons" */;
+			buildConfigurationList = 0F50F5FD2FF5CF77009D6EA4 /* Build configuration list for PBXNativeTarget "SensibleSideButtons-CCWidgetExtension" */;
 			buildPhases = (
-				4EC7C3B11EE711B400C9F725 /* Sources */,
-				4EC7C3B21EE711B400C9F725 /* Frameworks */,
-				4EC7C3B31EE711B400C9F725 /* Resources */,
+				0F50F5E32FF5CF76009D6EA4 /* Sources */,
+				0F50F5E42FF5CF76009D6EA4 /* Frameworks */,
+				0F50F5E52FF5CF76009D6EA4 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = SensibleSideButtons;
+			name = "SensibleSideButtons-CCWidgetExtension";
+			packageProductDependencies = (
+			);
+			productName = "SensibleSideButtons-CCWidgetExtension";
+			productReference = 0F50F5E72FF5CF76009D6EA4 /* SensibleSideButtons-CCWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		4EC7C3B41EE711B400C9F725 /* Sensible Side Buttons */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4EC7C3C81EE711B400C9F725 /* Build configuration list for PBXNativeTarget "Sensible Side Buttons" */;
+			buildPhases = (
+				4EC7C3B11EE711B400C9F725 /* Sources */,
+				4EC7C3B21EE711B400C9F725 /* Frameworks */,
+				4EC7C3B31EE711B400C9F725 /* Resources */,
+				0F50F6002FF5CF77009D6EA4 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Sensible Side Buttons";
 			productName = SideButtonFixer;
-			productReference = 4EC7C3B51EE711B400C9F725 /* SensibleSideButtons.app */;
+			productReference = 4EC7C3B51EE711B400C9F725 /* Sensible Side Buttons.app */;
 			productType = "com.apple.product-type.application";
 		};
 		4ECC16951EE54D3D0062AC72 /* swipesiml */ = {
@@ -194,13 +248,19 @@
 		4ECC168E1EE54D3D0062AC72 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 2700;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Alexei Baboulevitch";
 				TargetAttributes = {
+					0F50F5E62FF5CF76009D6EA4 = {
+						CreatedOnToolsVersion = 27.0;
+						DevelopmentTeam = 4U2NL54LRD;
+						ProvisioningStyle = Automatic;
+					};
 					4EC7C3B41EE711B400C9F725 = {
 						CreatedOnToolsVersion = 9.0;
-						DevelopmentTeam = R4MX2B96J2;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = 4U2NL54LRD;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 0;
@@ -209,11 +269,11 @@
 					};
 					4ECC16951EE54D3D0062AC72 = {
 						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = R4MX2B96J2;
+						DevelopmentTeam = 4U2NL54LRD;
 						ProvisioningStyle = Automatic;
 					};
 					4EF68AE01EE55A9500F6B0E8 = {
-						DevelopmentTeam = R4MX2B96J2;
+						DevelopmentTeam = 4U2NL54LRD;
 					};
 				};
 			};
@@ -233,12 +293,20 @@
 			targets = (
 				4ECC16951EE54D3D0062AC72 /* swipesiml */,
 				4EF68AE01EE55A9500F6B0E8 /* swipesimr */,
-				4EC7C3B41EE711B400C9F725 /* SensibleSideButtons */,
+				4EC7C3B41EE711B400C9F725 /* Sensible Side Buttons */,
+				0F50F5E62FF5CF76009D6EA4 /* SensibleSideButtons-CCWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0F50F5E52FF5CF76009D6EA4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4EC7C3B31EE711B400C9F725 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -251,6 +319,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0F50F5E32FF5CF76009D6EA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4EC7C3B11EE711B400C9F725 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -292,6 +367,108 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0F50F5FE2FF5CF77009D6EA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_TEAM = 4U2NL54LRD;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SensibleSideButtons-CCWidget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "SensibleSideButtons-CCWidget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Alexei Baboulevitch. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.5;
+				MARKETING_VERSION = 2.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.sohampatwardhan.sensible-side-buttons.SensibleSideButtons-CCWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		0F50F5FF2FF5CF77009D6EA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_TEAM = 4U2NL54LRD;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SensibleSideButtons-CCWidget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "SensibleSideButtons-CCWidget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Alexei Baboulevitch. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.5;
+				MARKETING_VERSION = 2.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.sohampatwardhan.sensible-side-buttons.SensibleSideButtons-CCWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		4EC7C3C61EE711B400C9F725 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -303,21 +480,25 @@
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 4U2NL54LRD;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = SideButtonFixer/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Sensible Side Buttons";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "net.archagon.sensible-side-buttons";
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.sohampatwardhan.sensible-side-buttons";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				REGISTER_APP_GROUPS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "SideButtonFixer/SensibleSideButtons-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
@@ -334,17 +515,21 @@
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 4U2NL54LRD;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = SideButtonFixer/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Sensible Side Buttons";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "net.archagon.sensible-side-buttons";
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.sohampatwardhan.sensible-side-buttons";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				REGISTER_APP_GROUPS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "SideButtonFixer/SensibleSideButtons-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
@@ -441,7 +626,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = arm64;
-				DEVELOPMENT_TEAM = R4MX2B96J2;
+				DEVELOPMENT_TEAM = 4U2NL54LRD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
@@ -459,7 +644,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = arm64;
-				DEVELOPMENT_TEAM = R4MX2B96J2;
+				DEVELOPMENT_TEAM = 4U2NL54LRD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
@@ -475,6 +660,7 @@
 			buildSettings = {
 				ARCHS = arm64;
 				DEVELOPMENT_TEAM = R4MX2B96J2;
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = 4U2NL54LRD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
@@ -493,6 +679,7 @@
 			buildSettings = {
 				ARCHS = arm64;
 				DEVELOPMENT_TEAM = R4MX2B96J2;
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = 4U2NL54LRD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
@@ -506,7 +693,16 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4EC7C3C81EE711B400C9F725 /* Build configuration list for PBXNativeTarget "SensibleSideButtons" */ = {
+		0F50F5FD2FF5CF77009D6EA4 /* Build configuration list for PBXNativeTarget "SensibleSideButtons-CCWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0F50F5FE2FF5CF77009D6EA4 /* Debug */,
+				0F50F5FF2FF5CF77009D6EA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4EC7C3C81EE711B400C9F725 /* Build configuration list for PBXNativeTarget "Sensible Side Buttons" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4EC7C3C61EE711B400C9F725 /* Debug */,
