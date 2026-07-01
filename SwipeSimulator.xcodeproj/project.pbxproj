@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F50F5C02FF5BC52009D6EA4 /* SensibleSideButtonsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F50F5BF2FF5BC52009D6EA4 /* SensibleSideButtonsApp.swift */; };
+		0F50F5C22FF5BC8E009D6EA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F50F5C12FF5BC8E009D6EA4 /* AppDelegate.swift */; };
 		4E9995151EE7172700A1CFA6 /* TouchEvents.c in Sources */ = {isa = PBXBuildFile; fileRef = 4ECC16A21EE54D870062AC72 /* TouchEvents.c */; };
-		4EC7C3B91EE711B400C9F725 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC7C3B81EE711B400C9F725 /* AppDelegate.m */; };
 		4EC7C3BE1EE711B400C9F725 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EC7C3BD1EE711B400C9F725 /* Assets.xcassets */; };
-		4EC7C3C41EE711B400C9F725 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC7C3C31EE711B400C9F725 /* main.m */; };
 		4ECC169A1EE54D3D0062AC72 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECC16991EE54D3D0062AC72 /* main.m */; };
 		4ECC16AB1EE54D870062AC72 /* TouchEvents.c in Sources */ = {isa = PBXBuildFile; fileRef = 4ECC16A21EE54D870062AC72 /* TouchEvents.c */; };
 		4EF1B3A31EE71DC40075438A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EF1B39F1EE71D690075438A /* Main.storyboard */; };
@@ -40,12 +40,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4EC7C3B51EE711B400C9F725 /* SideButtonFixer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = SideButtonFixer.app; path = SensibleSideButtons.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4EC7C3B71EE711B400C9F725 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		4EC7C3B81EE711B400C9F725 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0F50F5BE2FF5BC4D009D6EA4 /* SensibleSideButtons-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SensibleSideButtons-Bridging-Header.h"; sourceTree = "<group>"; };
+		0F50F5BF2FF5BC52009D6EA4 /* SensibleSideButtonsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensibleSideButtonsApp.swift; sourceTree = "<group>"; };
+		0F50F5C12FF5BC8E009D6EA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4EC7C3B51EE711B400C9F725 /* SensibleSideButtons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SensibleSideButtons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EC7C3BD1EE711B400C9F725 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4EC7C3C21EE711B400C9F725 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4EC7C3C31EE711B400C9F725 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4EC7C3C51EE711B400C9F725 /* SideButtonFixer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SideButtonFixer.entitlements; sourceTree = "<group>"; };
 		4ECC16961EE54D3D0062AC72 /* swipesiml */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = swipesiml; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ECC16991EE54D3D0062AC72 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -53,7 +53,6 @@
 		4ECC16A31EE54D870062AC72 /* IOHIDEventTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDEventTypes.h; sourceTree = "<group>"; };
 		4ECC16A41EE54D870062AC72 /* IOHIDEventData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDEventData.h; sourceTree = "<group>"; };
 		4ECC16A71EE54D870062AC72 /* TouchEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchEvents.h; sourceTree = "<group>"; };
-		4EF1B3A01EE71D690075438A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4EF68AE91EE55A9500F6B0E8 /* swipesimr */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = swipesimr; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -85,13 +84,13 @@
 		4EC7C3B61EE711B400C9F725 /* SideButtonFixer */ = {
 			isa = PBXGroup;
 			children = (
-				4EC7C3B71EE711B400C9F725 /* AppDelegate.h */,
-				4EC7C3B81EE711B400C9F725 /* AppDelegate.m */,
 				4EC7C3BD1EE711B400C9F725 /* Assets.xcassets */,
 				4EC7C3C21EE711B400C9F725 /* Info.plist */,
-				4EC7C3C31EE711B400C9F725 /* main.m */,
 				4EF1B39F1EE71D690075438A /* Main.storyboard */,
 				4EC7C3C51EE711B400C9F725 /* SideButtonFixer.entitlements */,
+				0F50F5BE2FF5BC4D009D6EA4 /* SensibleSideButtons-Bridging-Header.h */,
+				0F50F5BF2FF5BC52009D6EA4 /* SensibleSideButtonsApp.swift */,
+				0F50F5C12FF5BC8E009D6EA4 /* AppDelegate.swift */,
 			);
 			path = SideButtonFixer;
 			sourceTree = "<group>";
@@ -111,7 +110,7 @@
 			children = (
 				4ECC16961EE54D3D0062AC72 /* swipesiml */,
 				4EF68AE91EE55A9500F6B0E8 /* swipesimr */,
-				4EC7C3B51EE711B400C9F725 /* SideButtonFixer.app */,
+				4EC7C3B51EE711B400C9F725 /* SensibleSideButtons.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -152,7 +151,7 @@
 			);
 			name = SensibleSideButtons;
 			productName = SideButtonFixer;
-			productReference = 4EC7C3B51EE711B400C9F725 /* SideButtonFixer.app */;
+			productReference = 4EC7C3B51EE711B400C9F725 /* SensibleSideButtons.app */;
 			productType = "com.apple.product-type.application";
 		};
 		4ECC16951EE54D3D0062AC72 /* swipesiml */ = {
@@ -201,7 +200,7 @@
 					4EC7C3B41EE711B400C9F725 = {
 						CreatedOnToolsVersion = 9.0;
 						DevelopmentTeam = R4MX2B96J2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 0;
@@ -223,6 +222,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -255,9 +255,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EC7C3C41EE711B400C9F725 /* main.m in Sources */,
+				0F50F5C02FF5BC52009D6EA4 /* SensibleSideButtonsApp.swift in Sources */,
 				4E9995151EE7172700A1CFA6 /* TouchEvents.c in Sources */,
-				4EC7C3B91EE711B400C9F725 /* AppDelegate.m in Sources */,
+				0F50F5C22FF5BC8E009D6EA4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +285,6 @@
 		4EF1B39F1EE71D690075438A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4EF1B3A01EE71D690075438A /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -296,6 +295,7 @@
 		4EC7C3C61EE711B400C9F725 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = arm64;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
@@ -303,10 +303,10 @@
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = R4MX2B96J2;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -314,16 +314,19 @@
 				);
 				INFOPLIST_FILE = SideButtonFixer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.archagon.sensible-side-buttons";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SideButtonFixer/SensibleSideButtons-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		4EC7C3C71EE711B400C9F725 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = arm64;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
@@ -331,17 +334,19 @@
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = R4MX2B96J2;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = SideButtonFixer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.archagon.sensible-side-buttons";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SideButtonFixer/SensibleSideButtons-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -435,6 +440,7 @@
 		4ECC169E1EE54D3D0062AC72 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = arm64;
 				DEVELOPMENT_TEAM = R4MX2B96J2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -444,6 +450,7 @@
 					"LEFT=1",
 					"DEBUG=1",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -451,12 +458,14 @@
 		4ECC169F1EE54D3D0062AC72 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = arm64;
 				DEVELOPMENT_TEAM = R4MX2B96J2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = "LEFT=1";
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -464,6 +473,7 @@
 		4EF68AE71EE55A9500F6B0E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = arm64;
 				DEVELOPMENT_TEAM = R4MX2B96J2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -473,6 +483,7 @@
 					"RIGHT=1",
 					"DEBUG=1",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -480,12 +491,14 @@
 		4EF68AE81EE55A9500F6B0E8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = arm64;
 				DEVELOPMENT_TEAM = R4MX2B96J2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = "RIGHT=1";
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
