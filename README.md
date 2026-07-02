@@ -21,11 +21,11 @@ The original Sensible Side Buttons app was created by Alexei Baboulevitch. This 
 Release binaries are available from this repository's [GitHub Releases page](https://github.com/sohampatwardhan/sensible-side-buttons/releases/tag/v2.0):
 
 - Apple Silicon: [`Sensible-Side-Buttons-2.0-arm64.zip`](https://github.com/sohampatwardhan/sensible-side-buttons/releases/download/v2.0/Sensible-Side-Buttons-2.0-arm64.zip)
-- Universal: [`Sensible-Side-Buttons-2.0-universal.zip`](https://github.com/sohampatwardhan/sensible-side-buttons/releases/download/v2.0/Sensible-Side-Buttons-2.0-universal.zip) for Intel and Apple Silicon Macs
+- Universal (Intel and Apple Silicon): [`Sensible-Side-Buttons-2.0-universal.zip`](https://github.com/sohampatwardhan/sensible-side-buttons/releases/download/v2.0/Sensible-Side-Buttons-2.0-universal.zip)
 
 System requirements:
 
-- macOS 12.0 Monterey
+- macOS 12.0 Monterey or later
 
 The updated 2.0 app bundles are substantially smaller than the original Intel application. The Apple Silicon build is about 690 KB, and the Universal build is about 804 KB, compared with about 1.3 MB for the original Intel app.
 
